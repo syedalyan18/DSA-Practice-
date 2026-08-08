@@ -34,6 +34,64 @@ class List{
     }
  }
 
+ void push_back(int val){
+    Node * newNode = new Node(val);
+    if(head==NULL){
+        head=tail=newNode;
+        return;
+    } else{
+        tail->next=newNode;
+        tail=newNode;
+    }
+ }
+
+ void pop_front(){
+    if(head==NULL){
+        cout<<"LL is empty"<<endl;
+        return;
+    }
+
+    Node *temp=head;
+    head=head->next;
+    temp->next=NULL;
+    delete temp;
+
+ }
+
+ void pop_back(){
+    if(tail==NULL){
+        cout<<"LL is empty"<<endl;
+        return;
+    }
+
+    Node *temp=head;
+    while(temp->next!=tail){
+         temp=temp->next;
+    }
+    temp->next=NULL;
+    
+    delete tail;
+    tail=temp;
+ }
+
+ void insert(int val,int pos){
+    if(pos<0){
+        cout<<"Invalid Pos"<<endl;
+        return;
+    } else if(pos==0){
+        push_front(val);
+    }
+    else{
+        Node * newNode=new Node(val);
+        Node *temp=head;
+        for(int i=0;i<pos-1;i++){
+            temp=temp->next;
+        }
+        newNode->next=temp->next;
+        temp->next=newNode;
+    }
+ }
+
  void printLL(){
     Node* temp=head;
     while(temp!=NULL){
@@ -46,10 +104,13 @@ class List{
 
 
 int main(){
-    
+
 List ll;
 ll.push_front(1);
 ll.push_front(2);
 ll.push_front(3);
+ll.push_back(0);
+ll.insert(4,0);
 ll.printLL();
+
 }
