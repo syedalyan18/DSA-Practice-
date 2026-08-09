@@ -50,7 +50,7 @@ class DoublyList{
 
  void pop_front(){
     if(head==NULL){
-        cout<<"LL is empty"<<endl;
+        cout<<"DLL is empty"<<endl;
         return;
     }
 
@@ -66,38 +66,21 @@ class DoublyList{
 
  void pop_back(){
     if(tail==NULL){
-        cout<<"LL is empty"<<endl;
+        cout<<"DLL is empty"<<endl;
         return;
     }
 
     Node *temp=tail;
     tail=tail->prev;
 
-    if(temp!=tail){
-         temp=temp->next;
+   if(tail==NULL){
+        head=NULL;
+    } else {
+        tail->next=NULL;
     }
-    temp->prev=NULL;
-    
     delete temp;
  }
 
- void insert(int val,int pos){
-    if(pos<0){
-        cout<<"Invalid Pos"<<endl;
-        return;
-    } else if(pos==0){
-        push_front(val);
-    }
-    else{
-        Node * newNode=new Node(val);
-        Node *temp=head;
-        for(int i=0;i<pos-1;i++){
-            temp=temp->next;
-        }
-        newNode->next=temp->next;
-        temp->next=newNode;
-    }
- }
 
  void printLL(){
     Node* temp=head;
@@ -108,18 +91,17 @@ class DoublyList{
     cout<<"NULL"<<endl;
  }
 };
-
-
 int main(){
 
 DoublyList dll;
+
 dll.push_back(1);
 dll.push_back(2);
 dll.push_back(3);
 dll.push_back(4);
-// dll.pop_back();
-// dll.push_back(0);
-// dll.insert(4,0);
+dll.pop_back();
 dll.printLL();
 
 }
+
+
