@@ -43,6 +43,6 @@ int main(){
 
     int start=0; int end=arr2.size() - 1;
 
-    cout<<"Binary Search : "<<binary_search(arr,target)<<endl;
-    cout<<"Recursive Binary Search : "<<binary_recursive_search(arr2,target2,start,end);
-}
+//     cout<<"Binary Search : "<<binary_search(arr,target)<<endl;
+//     cout<<"Recursive Binary Search : "<<binary_recursive_search(arr2,target2,start,end);
+// }
