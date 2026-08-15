@@ -17,7 +17,7 @@ int SumOfNums(int n){
     return n + SumOfNums(n-1);
 }
 
-int main(){
-    cout<< Factorial(4)<<endl;
-    cout<<SumOfNums(5);
-}
+// int main(){
+//     cout<< Factorial(4)<<endl;
+//     cout<<SumOfNums(5);
+// }
