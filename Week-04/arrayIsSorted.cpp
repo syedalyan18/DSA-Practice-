@@ -10,9 +10,9 @@ bool IsSorted(vector<int> arr,int n){
     return arr[n-1]>=arr[n-2] && IsSorted(arr,n-1);
 }
 
-// int main(){
-//     vector<int> arr={1,2,4,3};
+int main(){
+    vector<int> arr={1,2,4,3};
 
-//     cout<<IsSorted(arr,arr.size())<<endl;
-//     return 0;
-// }
+    cout<<IsSorted(arr,arr.size())<<endl;
+    return 0;
+}
